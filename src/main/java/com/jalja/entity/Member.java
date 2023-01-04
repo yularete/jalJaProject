@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name="member")
 @Getter @Setter
 @ToString //변수 값들을 리턴해주는 toString 메소드를 자동 생성해줌
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @Column(name = "member_id")
