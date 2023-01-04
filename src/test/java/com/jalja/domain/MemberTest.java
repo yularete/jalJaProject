@@ -1,4 +1,4 @@
-package com.jalja.entity;
+package com.jalja.domain;
 
 import com.jalja.repository.MemberRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -12,8 +12,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional

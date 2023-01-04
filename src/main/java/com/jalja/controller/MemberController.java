@@ -2,7 +2,7 @@ package com.jalja.controller;
 
 import com.jalja.Service.MemberService;
 import com.jalja.dto.MemberFormDto;
-import com.jalja.entity.Member;
+import com.jalja.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

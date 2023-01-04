@@ -1,9 +1,8 @@
 package com.jalja.Service;
 
-import com.jalja.entity.Member;
+import com.jalja.domain.Member;
 import com.jalja.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

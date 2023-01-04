@@ -1,4 +1,4 @@
-package com.jalja.entity;
+package com.jalja.domain;
 
 import lombok.Getter;
 import lombok.Setter;

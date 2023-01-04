@@ -1,4 +1,4 @@
-package com.jalja.entity;
+package com.jalja.domain;
 
 import com.jalja.constant.Role;
 import com.jalja.dto.MemberFormDto;

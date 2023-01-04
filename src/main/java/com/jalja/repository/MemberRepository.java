@@ -1,6 +1,6 @@
 package com.jalja.repository;
 
-import com.jalja.entity.Member;
+import com.jalja.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {

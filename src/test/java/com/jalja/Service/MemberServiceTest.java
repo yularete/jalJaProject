@@ -1,7 +1,7 @@
 package com.jalja.Service;
 
 import com.jalja.dto.MemberFormDto;
-import com.jalja.entity.Member;
+import com.jalja.domain.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
