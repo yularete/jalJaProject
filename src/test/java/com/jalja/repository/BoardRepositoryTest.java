@@ -56,4 +56,10 @@ class BoardRepositoryTest {
 
         boardRepository.save(board);
     }
+
+    @Test
+    public void testBoardDelete(){
+        Long bno = 1L;
+        boardRepository.deleteById(bno);
+    }
 }
