@@ -7,18 +7,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
+
+import java.util.Optional;
 import java.util.stream.IntStream;
 
+//@TestPropertySource(locations = "classpath:application-test.properties")
 @SpringBootTest
 @Log4j2
-@TestPropertySource(locations = "classpath:application-test.properties")
 class BoardRepositoryTest {
 
     @Autowired
     private BoardRepository boardRepository;
 
     @Test
-    public void testInsert(){
+    public void testBoardInsert(){
         IntStream.rangeClosed(1,100).forEach(i -> {
             Board board = Board.builder()
                     .title("title..."+i)
@@ -29,5 +31,16 @@ class BoardRepositoryTest {
             Board result = boardRepository.save(board);
             log.info("BNO: " + result.getBno());
         });
+    }
+
+    @Test
+    public void testBoardSelect(){
+        Long bno = 100L;
+        //findById()의 리턴 타입은 Optional<T> !!
+        Optional<Board> result = boardRepository.findById(bno);
+
+        Board board = result.orElseThrow();
+
+        log.info(board);
     }
 }
