@@ -22,10 +22,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
@@ -33,6 +31,31 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.2'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.2'
+
+	testImplementation ("org.junit.jupiter:junit-jupiter-api")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+	implementation 'mysql:mysql-connector-java'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor'org.projectlombok:lombok'
+
+}
+configurations {
+	all {
+		exclude group: 'ch.qos.logback', module: 'logback-classic'
+	}
+}
+configurations {
+	all {
+		exclude group: 'ch.qos.logback', module: 'logback-classic'
+		exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+	}
 }
 
 tasks.named('test') {
