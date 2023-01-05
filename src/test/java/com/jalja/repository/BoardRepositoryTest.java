@@ -43,4 +43,17 @@ class BoardRepositoryTest {
 
         log.info(board);
     }
+
+    @Test
+    public void testBoardUpdate(){
+        Long bno = 100L;
+
+        Optional<Board> result = boardRepository.findById(bno);
+
+        Board board = result.orElseThrow();
+
+        board.modify("modify..title 100", "modify content 100");
+
+        boardRepository.save(board);
+    }
 }

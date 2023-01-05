@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jalja.repository.BoardRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-05T10:45:50" hostname="YULA-iMac.local" time="0.189">
+<testsuite name="com.jalja.repository.BoardRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-05T10:53:37" hostname="YULA-iMac.local" time="0.178">
   <properties/>
-  <testcase name="testBoardSelect()" classname="com.jalja.repository.BoardRepositoryTest" time="0.189"/>
+  <testcase name="testBoardUpdate()" classname="com.jalja.repository.BoardRepositoryTest" time="0.178"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -11,27 +11,27 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.7.2)
 
-2023-01-05 19:45:47.169  INFO 4169 --- [    Test worker] c.j.r.BoardRepositoryTest                : Starting BoardRepositoryTest using Java 11.0.17 on YULA-iMac.local with PID 4169 (started by yula in /Users/yula/git/jalja)
-2023-01-05 19:45:47.174  INFO 4169 --- [    Test worker] c.j.r.BoardRepositoryTest                : No active profile set, falling back to 1 default profile: "default"
-2023-01-05 19:45:47.732  INFO 4169 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-05 19:45:47.764  INFO 4169 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
-2023-01-05 19:45:48.119  INFO 4169 --- [    Test worker] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-05 19:45:48.151  INFO 4169 --- [    Test worker] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.10.Final
-2023-01-05 19:45:48.277  INFO 4169 --- [    Test worker] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-05 19:45:48.349  INFO 4169 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2023-01-05 19:45:48.614  INFO 4169 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2023-01-05 19:45:48.627  INFO 4169 --- [    Test worker] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2023-01-05 19:45:49.166  INFO 4169 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-05 19:45:49.172  INFO 4169 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-05 19:45:49.693  WARN 4169 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-05 19:45:50.198  INFO 4169 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b4bc7b9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12d33d7a, org.springframework.security.web.context.SecurityContextPersistenceFilter@17adbecf, org.springframework.security.web.header.HeaderWriterFilter@76e10574, org.springframework.security.web.csrf.CsrfFilter@6c2063e0, org.springframework.security.web.authentication.logout.LogoutFilter@1de83be1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ce067bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74214ac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e00c94e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16bbb59c, org.springframework.security.web.session.SessionManagementFilter@4d305059, org.springframework.security.web.access.ExceptionTranslationFilter@706dee4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e214d39]
-2023-01-05 19:45:50.206  WARN 4169 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-01-05 19:45:50.207  INFO 4169 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/img/**']
-2023-01-05 19:45:50.207  WARN 4169 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-01-05 19:45:50.207  INFO 4169 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/**']
-2023-01-05 19:45:50.207  WARN 4169 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-01-05 19:45:50.208  INFO 4169 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/**']
-2023-01-05 19:45:50.887  INFO 4169 --- [    Test worker] c.j.r.BoardRepositoryTest                : Started BoardRepositoryTest in 3.938 seconds (JVM running for 4.81)
+2023-01-05 19:53:34.350  INFO 4662 --- [    Test worker] c.j.r.BoardRepositoryTest                : Starting BoardRepositoryTest using Java 11.0.17 on YULA-iMac.local with PID 4662 (started by yula in /Users/yula/git/jalja)
+2023-01-05 19:53:34.355  INFO 4662 --- [    Test worker] c.j.r.BoardRepositoryTest                : No active profile set, falling back to 1 default profile: "default"
+2023-01-05 19:53:34.906  INFO 4662 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-05 19:53:34.938  INFO 4662 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2023-01-05 19:53:35.304  INFO 4662 --- [    Test worker] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-05 19:53:35.348  INFO 4662 --- [    Test worker] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.10.Final
+2023-01-05 19:53:35.497  INFO 4662 --- [    Test worker] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-05 19:53:35.589  INFO 4662 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-05 19:53:35.895  INFO 4662 --- [    Test worker] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-05 19:53:35.910  INFO 4662 --- [    Test worker] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-01-05 19:53:36.388  INFO 4662 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-05 19:53:36.393  INFO 4662 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-05 19:53:36.803  WARN 4662 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-05 19:53:37.196  INFO 4662 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8a0a1d1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dd50380, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a450cb5, org.springframework.security.web.header.HeaderWriterFilter@49318c2a, org.springframework.security.web.csrf.CsrfFilter@7a8e35d1, org.springframework.security.web.authentication.logout.LogoutFilter@5e9a9683, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a8081f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b45a3e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7927209f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@215efb16, org.springframework.security.web.session.SessionManagementFilter@31b4c003, org.springframework.security.web.access.ExceptionTranslationFilter@4d305059, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@191cf38f]
+2023-01-05 19:53:37.204  WARN 4662 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-05 19:53:37.205  INFO 4662 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/img/**']
+2023-01-05 19:53:37.205  WARN 4662 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-05 19:53:37.205  INFO 4662 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/**']
+2023-01-05 19:53:37.205  WARN 4662 --- [    Test worker] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-05 19:53:37.206  INFO 4662 --- [    Test worker] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/**']
+2023-01-05 19:53:37.764  INFO 4662 --- [    Test worker] c.j.r.BoardRepositoryTest                : Started BoardRepositoryTest in 3.634 seconds (JVM running for 4.545)
 Hibernate: 
     select
         board0_.bno as bno1_0_0_,
@@ -46,15 +46,53 @@ Hibernate:
         board board0_ 
     where
         board0_.bno=?
-2023-01-05 19:45:51.046 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [100]
-2023-01-05 19:45:51.060 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([mod_date2_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
-2023-01-05 19:45:51.060 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([reg_date3_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
-2023-01-05 19:45:51.060 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([created_4_0_0_] : [VARCHAR]) - []
-2023-01-05 19:45:51.061 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([modified5_0_0_] : [VARCHAR]) - []
-2023-01-05 19:45:51.061 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([content6_0_0_] : [VARCHAR]) - [content...100]
-2023-01-05 19:45:51.061 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title7_0_0_] : [VARCHAR]) - [title...100]
-2023-01-05 19:45:51.061 TRACE 4169 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([writer8_0_0_] : [VARCHAR]) - [user0]
-2023-01-05 19:45:51.073  INFO 4169 --- [    Test worker] c.j.r.BoardRepositoryTest                : Board(bno=100, title=title...100, content=content...100, writer=user0)
+2023-01-05 19:53:37.863 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [100]
+2023-01-05 19:53:37.872 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([mod_date2_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
+2023-01-05 19:53:37.872 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([reg_date3_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
+2023-01-05 19:53:37.872 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([created_4_0_0_] : [VARCHAR]) - []
+2023-01-05 19:53:37.873 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([modified5_0_0_] : [VARCHAR]) - []
+2023-01-05 19:53:37.873 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([content6_0_0_] : [VARCHAR]) - [content...100]
+2023-01-05 19:53:37.873 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title7_0_0_] : [VARCHAR]) - [title...100]
+2023-01-05 19:53:37.873 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([writer8_0_0_] : [VARCHAR]) - [user0]
+Hibernate: 
+    select
+        board0_.bno as bno1_0_0_,
+        board0_.mod_date as mod_date2_0_0_,
+        board0_.reg_date as reg_date3_0_0_,
+        board0_.created_by as created_4_0_0_,
+        board0_.modified_by as modified5_0_0_,
+        board0_.content as content6_0_0_,
+        board0_.title as title7_0_0_,
+        board0_.writer as writer8_0_0_ 
+    from
+        board board0_ 
+    where
+        board0_.bno=?
+2023-01-05 19:53:37.899 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [BIGINT] - [100]
+2023-01-05 19:53:37.901 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([mod_date2_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
+2023-01-05 19:53:37.902 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([reg_date3_0_0_] : [TIMESTAMP]) - [2023-01-05T19:31:42.428309]
+2023-01-05 19:53:37.902 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([created_4_0_0_] : [VARCHAR]) - []
+2023-01-05 19:53:37.902 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([modified5_0_0_] : [VARCHAR]) - []
+2023-01-05 19:53:37.902 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([content6_0_0_] : [VARCHAR]) - [content...100]
+2023-01-05 19:53:37.903 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([title7_0_0_] : [VARCHAR]) - [title...100]
+2023-01-05 19:53:37.903 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicExtractor                 : extracted value ([writer8_0_0_] : [VARCHAR]) - [user0]
+Hibernate: 
+    update
+        board 
+    set
+        mod_date=?,
+        modified_by=?,
+        content=?,
+        title=?,
+        writer=? 
+    where
+        bno=?
+2023-01-05 19:53:37.941 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [TIMESTAMP] - [2023-01-05T19:53:37.931347]
+2023-01-05 19:53:37.941 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [VARCHAR] - []
+2023-01-05 19:53:37.942 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [modify content 100]
+2023-01-05 19:53:37.942 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [VARCHAR] - [modify..title 100]
+2023-01-05 19:53:37.942 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [VARCHAR] - [user0]
+2023-01-05 19:53:37.942 TRACE 4662 --- [    Test worker] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [BIGINT] - [100]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
