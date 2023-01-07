@@ -1,3 +1,8 @@
+buildscript {
+	ext {
+		queryDslVersion = "5.0.0"
+	}
+}
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.2'
@@ -7,6 +12,8 @@ plugins {
 group = 'com.jalja'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+
 
 configurations {
 	compileOnly {
@@ -45,6 +52,14 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor'org.projectlombok:lombok'
 
+	implementation("com.querydsl:querydsl-jpa:5.0.0")
+
+	annotationProcessor(
+
+			"javax.persistence:javax.persistenc-api",
+			"javax.annotation:javax.annotation-api",
+			"com.querydsl:querydsl-apt:5.0.0:jpa"
+	)
 }
 configurations {
 	all {
@@ -60,4 +75,12 @@ configurations {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
+		}
+	}
 }
