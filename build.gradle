@@ -56,7 +56,7 @@ dependencies {
 
 	annotationProcessor(
 
-			"javax.persistence:javax.persistenc-api",
+			"javax.persistence:javax.persistence-api",
 			"javax.annotation:javax.annotation-api",
 			"com.querydsl:querydsl-apt:5.0.0:jpa"
 	)
