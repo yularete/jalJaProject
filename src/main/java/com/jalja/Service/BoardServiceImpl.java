@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 @Log4j2
@@ -27,5 +28,16 @@ public class BoardServiceImpl implements BoardService{
 
         Long bno = boardRepository.save(board).getBno();
         return bno;
+    }
+
+    @Override
+    public BoardDTO readOne(Long bno){
+        Optional<Board> result = boardRepository.findById(bno);
+
+        Board board = result.orElseThrow();
+        //Board 인스턴스를 boardDTO.class에 매핑해 boardDTO 객체 생성
+        BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+
+        return boardDTO;
     }
 }
