@@ -83,4 +83,12 @@ class BoardRepositoryTest {
 
         boardList.forEach(board -> log.info(board));
     }
+
+    @Test
+    public void testBoardSearch1(){
+        //2 page order by bno desc
+    Pageable pageable = PageRequest.of(1,10, Sort.by("bno").descending());
+
+    boardRepository.search1(pageable);
+    }
 }
