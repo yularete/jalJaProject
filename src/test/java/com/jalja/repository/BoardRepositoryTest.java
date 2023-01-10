@@ -24,12 +24,12 @@ class BoardRepositoryTest {
     private BoardRepository boardRepository;
 
     @Test
-    public void testBoardInsert(){
-        IntStream.rangeClosed(1,100).forEach(i -> {
+    public void testBoardInsert() {
+        IntStream.rangeClosed(1, 100).forEach(i -> {
             Board board = Board.builder()
-                    .title("title..."+i)
-                    .content("content..."+i)
-                    .writer("user"+(i%10))
+                    .title("title..." + i)
+                    .content("content..." + i)
+                    .writer("user" + (i % 10))
                     .build();
 
             Board result = boardRepository.save(board);
@@ -38,7 +38,7 @@ class BoardRepositoryTest {
     }
 
     @Test
-    public void testBoardSelect(){
+    public void testBoardSelect() {
         Long bno = 100L;
         //findById()의 리턴 타입은 Optional<T> !!
         Optional<Board> result = boardRepository.findById(bno);
@@ -49,7 +49,7 @@ class BoardRepositoryTest {
     }
 
     @Test
-    public void testBoardUpdate(){
+    public void testBoardUpdate() {
         Long bno = 100L;
 
         Optional<Board> result = boardRepository.findById(bno);
@@ -62,15 +62,15 @@ class BoardRepositoryTest {
     }
 
     @Test
-    public void testBoardDelete(){
+    public void testBoardDelete() {
         Long bno = 1L;
         boardRepository.deleteById(bno);
     }
 
     @Test
-    public void testBoardPaging(){
+    public void testBoardPaging() {
         //1 page order by bno desc
-        Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("bno").descending());
 
         Page<Board> result = boardRepository.findAll(pageable);
 
@@ -85,10 +85,38 @@ class BoardRepositoryTest {
     }
 
     @Test
-    public void testBoardSearch1(){
+    public void testBoardSearch1() {
         //2 page order by bno desc
-    Pageable pageable = PageRequest.of(1,10, Sort.by("bno").descending());
+        Pageable pageable = PageRequest.of(1, 10, Sort.by("bno").descending());
 
-    boardRepository.search1(pageable);
+        boardRepository.search1(pageable);
+    }
+
+    @Test
+    public void testSearchAll() {
+        String[] types = {"t", "c", "w"};
+
+        String keyword = "1";
+
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("bno").descending());
+
+        Page<Board> result = boardRepository.searchAll(types, keyword, pageable);
+    }
+
+    @Test
+    public void testSearchAll2(){
+        String[] types = {"t","c","w"};
+
+        String keyword = "1";
+
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("bno").descending());
+
+        Page<Board> result = boardRepository.searchAll(types, keyword, pageable);
+
+        log.info(result.getTotalPages());//total pages
+        log.info(result.getSize()); //page size
+        log.info(result.getNumber()); //Page Number
+        log.info(result.hasPrevious() + ": " + result.hasNext()); //prev next
+        result.getContent().forEach(board -> log.info(board));
     }
 }

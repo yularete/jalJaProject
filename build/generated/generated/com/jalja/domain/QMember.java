@@ -23,18 +23,12 @@ public class QMember extends EntityPathBase<Member> {
 
     public final StringPath address = createString("address");
 
-    //inherited
-    public final StringPath createdBy = _super.createdBy;
-
     public final StringPath email = createString("email");
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modDate = _super.modDate;
-
-    //inherited
-    public final StringPath modifiedBy = _super.modifiedBy;
 
     public final StringPath name = createString("name");
 

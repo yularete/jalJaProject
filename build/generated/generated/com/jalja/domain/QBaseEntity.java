@@ -10,29 +10,29 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * QBaseTimeEntity is a Querydsl query type for BaseTimeEntity
+ * QBaseEntity is a Querydsl query type for BaseEntity
  */
 @Generated("com.querydsl.codegen.DefaultSupertypeSerializer")
-public class QBaseTimeEntity extends EntityPathBase<BaseTimeEntity> {
+public class QBaseEntity extends EntityPathBase<BaseEntity> {
 
-    private static final long serialVersionUID = -42206212L;
+    private static final long serialVersionUID = -334946097L;
 
-    public static final QBaseTimeEntity baseTimeEntity = new QBaseTimeEntity("baseTimeEntity");
+    public static final QBaseEntity baseEntity = new QBaseEntity("baseEntity");
 
     public final DateTimePath<java.time.LocalDateTime> modDate = createDateTime("modDate", java.time.LocalDateTime.class);
 
     public final DateTimePath<java.time.LocalDateTime> regDate = createDateTime("regDate", java.time.LocalDateTime.class);
 
-    public QBaseTimeEntity(String variable) {
-        super(BaseTimeEntity.class, forVariable(variable));
+    public QBaseEntity(String variable) {
+        super(BaseEntity.class, forVariable(variable));
     }
 
-    public QBaseTimeEntity(Path<? extends BaseTimeEntity> path) {
+    public QBaseEntity(Path<? extends BaseEntity> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QBaseTimeEntity(PathMetadata metadata) {
-        super(BaseTimeEntity.class, metadata);
+    public QBaseEntity(PathMetadata metadata) {
+        super(BaseEntity.class, metadata);
     }
 
 }
