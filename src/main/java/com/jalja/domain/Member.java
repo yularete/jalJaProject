@@ -1,7 +1,7 @@
 package com.jalja.domain;
 
 import com.jalja.constant.Role;
-import com.jalja.dto.MemberFormDto;
+import com.jalja.dto.MemberFormDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -33,7 +33,7 @@ public class Member extends BaseEntity{
     private Role role;
 
     //Member entity 생성하는 메소드
-    public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder){
+    public static Member createMember(MemberFormDTO memberFormDto, PasswordEncoder passwordEncoder){
         Member member = new Member();
         member.setName(memberFormDto.getName());
         member.setEmail(memberFormDto.getEmail());

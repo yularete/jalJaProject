@@ -1,6 +1,6 @@
 package com.jalja.Service;
 
-import com.jalja.dto.MemberFormDto;
+import com.jalja.dto.MemberFormDTO;
 import com.jalja.domain.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class MemberServiceTest {
     PasswordEncoder passwordEncoder;
 
     public Member createMember(){ //회원정보를 입력한 Member Entity를 만듦
-        MemberFormDto memberFormDto = new MemberFormDto();
+        MemberFormDTO memberFormDto = new MemberFormDTO();
         memberFormDto.setEmail("test@email.com");
         memberFormDto.setName("홍길동");
         memberFormDto.setAddress("서울시 마포구 합정동");

@@ -1,7 +1,7 @@
 package com.jalja.controller;
 
 import com.jalja.Service.MemberService;
-import com.jalja.dto.MemberFormDto;
+import com.jalja.dto.MemberFormDTO;
 import com.jalja.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,12 +24,12 @@ public class MemberController {
 
     @GetMapping(value = "/new")
     public String memberForm(Model model){
-        model.addAttribute("memberFormDto", new MemberFormDto()); //value 객체를 name 이름으로 추가
+        model.addAttribute("memberFormDto", new MemberFormDTO()); //value 객체를 name 이름으로 추가
         return "member/memberForm";
     }
 
     @PostMapping(value="/new")
-    public String newMember(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model){
+    public String newMember(@Valid MemberFormDTO memberFormDto, BindingResult bindingResult, Model model){
         //검증하려는 객체 앞에 @Valid 어노테이션 선언. 검증 후 결과는 bindingResult에 담김.
 
         if(bindingResult.hasErrors()){
