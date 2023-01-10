@@ -15,14 +15,14 @@ import java.util.Optional;
 @Log4j2
 @RequiredArgsConstructor
 @Transactional //사용시 스프링은 해당 객체를 감싸는 별도의 클래스를 생성함
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
     private final ModelMapper modelMapper;
 
     private final BoardRepository boardRepository;
 
     @Override
-    public Long register(BoardDTO boardDTO){
+    public Long register(BoardDTO boardDTO) {
         //boardDto 인스턴스를 board.class(타겟클래스)에 매핑하여 board 객체 생성
         Board board = modelMapper.map(boardDTO, Board.class);
 
@@ -31,7 +31,7 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public BoardDTO readOne(Long bno){
+    public BoardDTO readOne(Long bno) {
         Optional<Board> result = boardRepository.findById(bno);
 
         Board board = result.orElseThrow();
@@ -42,7 +42,7 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public void modify(BoardDTO boardDTO){
+    public void modify(BoardDTO boardDTO) {
         Optional<Board> result = boardRepository.findById(boardDTO.getBno());
 
         Board board = result.orElseThrow();
@@ -50,5 +50,10 @@ public class BoardServiceImpl implements BoardService{
         board.modify(boardDTO.getTitle(), boardDTO.getContent());
 
         boardRepository.save(board);
+    }
+
+    @Override
+    public void remove(Long bno) {
+        boardRepository.deleteById(bno);
     }
 }
