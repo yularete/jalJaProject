@@ -1,6 +1,8 @@
 package com.jalja.Service;
 
 import com.jalja.dto.BoardDTO;
+import com.jalja.dto.PageRequestDTO;
+import com.jalja.dto.PageResponseDTO;
 
 public interface BoardService {
 
@@ -11,4 +13,6 @@ public interface BoardService {
     void modify(BoardDTO boardDTO); //기존의 엔티티 객체에서 필요한 부분만 변경하도록 함
 
     void remove(Long bno);
+
+    PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO);
 }
