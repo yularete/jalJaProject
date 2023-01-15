@@ -29,7 +29,7 @@ section{width: 70vw; margin: 0 auto;}
 #logoImg{width: 60px; display: flex; margin-left: 9vw; object-fit: cover;}
 
 /*menu*/
-#navi>ul{display: flex; align-items: center;}
+#navi>ul{display: flex; align-items: center; margin-bottom: 0;}
 #navi li{margin-left: 2.4vw;} 
 .menu{padding:0 2px; text-decoration-line: none; color: #232323; text-align: center; align-items:center; font-size: 18px; font-family: 'IBMPlexSansKR-Regular';}
 .menu:hover{color: #8993DA;}
@@ -42,4 +42,4 @@ section{width: 70vw; margin: 0 auto;}
 #logoutBtn{padding: 0 1.1vw; line-height: 36px; vertical-align: middle;text-align: center;  align-items:center; font-family: 'IBMPlexSansKR-Regular'; display: inline-block;}
 #logoutBtn:hover{color: #8993DA; background-color: white;}
 
-header>hr {border-color: #E8E8E8; border-top: 0px; margin-top: 10px;}
+div>hr {border-color: #E8E8E8; border-top: 0px; margin-top: 3px; margin-bottom: 15px}

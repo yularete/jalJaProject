@@ -1,9 +1,13 @@
 package com.jalja.dto;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.util.List;
 
+@Getter
+@ToString
 public class PageResponseDTO<E> {
 
     private int page;
@@ -38,7 +42,9 @@ public class PageResponseDTO<E> {
 
         int last = (int) (Math.ceil((total / (double) size))); //데이터의 개수를 계산한 마지막 페이지 번호
 
-        this.end = end > last ? last : end;
+        this.end = Math.min(end, last);
+                    //end > last ? last : end;
+
         this.prev = this.start >1;
         this.next = total> this.end*this.size;
     }

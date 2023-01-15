@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/layout1}">
+<div layout:fragment="content">
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">글쓴이</th>
+            <th scope="col">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dto:${responseDTO.dtoList}">
+            <th scope="row">[[${dto.bno}]]</th>
+            <td>[[${dto.title}]]</td>
+            <td>[[${dto.writer}]]</td>
+            <td>[[${#temporals.format(dto.regDate, 'yyyy-MM-dd')}]]</td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <ul>
+            <li th:if="${responseDTO.prev}">
+                <a th:data-num="${responseDTO.start -1}">이전</a>
+            </li>
+
+            <th:block th:each="i: ${#numbers.sequence(responseDTO.start, responseDTO.end)}">
+
+            <!--<li th:if="${responseDTO.page == i}">-->
+            <li>
+                <a th:data-num="${i}">[[${i}]]</a>
+            </li>
+            </th:block>
+
+            <li th:if="${responseDTO.next}">
+                <a th:data-num="${responseDTO.start +1}">다음</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</html>
