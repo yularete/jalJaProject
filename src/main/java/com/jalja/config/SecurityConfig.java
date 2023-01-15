@@ -30,7 +30,7 @@ public class SecurityConfig {
 
         //시큐리티 처리에 HttpServletRequest를 이용한다는 것을 의미.
         http.authorizeRequests()
-                .mvcMatchers("/","/members/**").permitAll()
+                .mvcMatchers("/","/members/**","/css/**", "/img/**", "/js/**").permitAll()
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
 

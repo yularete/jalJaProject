@@ -1,0 +1,45 @@
+/*font*/
+@font-face {
+    font-family: 'Ansungtangmyun-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ansungtangmyun-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{padding: 0; margin: 0; color: #404040; font-family: 'IBMPlexSansKR-Regular'; word-break: keep-all;}
+
+a,p,span{ font-size: 11pt; text-decoration: none;}
+
+input{outline: none; border: none; accent-color: #F25774; cursor: pointer;}
+
+ul{list-style: none;}
+
+section{width: 70vw; margin: 0 auto;}
+
+/*logoImg*/
+#navi{margin: 10 auto; display: flex; width: 80vw; height:60px; }
+#navi{display: flex;}
+.logo{display: flex; align-items: center;}
+#logoImg{width: 60px; display: flex; margin-left: 9vw; object-fit: cover;}
+
+/*menu*/
+#navi>ul{display: flex; align-items: center;}
+#navi li{margin-left: 2.4vw;} 
+.menu{padding:0 2px; text-decoration-line: none; color: #232323; text-align: center; align-items:center; font-size: 18px; font-family: 'IBMPlexSansKR-Regular';}
+.menu:hover{color: #8993DA;}
+
+/*loginBtn*/
+.loginLi{right: 10vw; position: absolute;}
+#loginBtn{padding: 0 1.1vw; line-height: 36px; vertical-align: middle;text-align: center;  align-items:center; font-family: 'IBMPlexSansKR-Regular'; display: inline-block;}
+#loginBtn:hover{color: #8993DA; background-color: white;}
+
+#logoutBtn{padding: 0 1.1vw; line-height: 36px; vertical-align: middle;text-align: center;  align-items:center; font-family: 'IBMPlexSansKR-Regular'; display: inline-block;}
+#logoutBtn:hover{color: #8993DA; background-color: white;}
+
+header>hr {border-color: #E8E8E8; border-top: 0px; margin-top: 10px;}
