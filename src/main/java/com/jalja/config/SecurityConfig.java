@@ -35,6 +35,9 @@ public class SecurityConfig {
                 .anyRequest().authenticated();
 
         http.exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint());
+
+        http.csrf().disable();
+
         return http.build();
     }
     @Bean
