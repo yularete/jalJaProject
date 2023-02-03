@@ -1,6 +1,7 @@
 package com.jalja.controller;
 
 import com.jalja.Service.BoardService;
+import com.jalja.domain.Board;
 import com.jalja.dto.BoardDTO;
 import com.jalja.dto.PageRequestDTO;
 import com.jalja.dto.PageResponseDTO;
@@ -61,7 +62,7 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
-    @GetMapping("/read")
+    @GetMapping({"/read", "/modify"})
     public void read(Long bno, PageRequestDTO pageRequestDTO, Model model){
 
         BoardDTO boardDTO = boardService.readOne(bno);
@@ -70,7 +71,6 @@ public class BoardController {
 
         model.addAttribute("dto", boardDTO);
     }
-
     @GetMapping(value = "/test")
     public String list2(PageRequestDTO pageRequestDTO, Model model) {
 
